@@ -63,7 +63,6 @@ class UsuarioService {
 
             return usuario
         } catch (error) {
-            console.log('error', error)
             throw new Error('Erro ao editar usuario!')
         }
     }

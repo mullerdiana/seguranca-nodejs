@@ -18,7 +18,7 @@ module.exports = {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       },
-      permissoa_id: {
+      permissao_id: {
         type: Sequelize.UUID,
         references: {
           model: 'permissoes',

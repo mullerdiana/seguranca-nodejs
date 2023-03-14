@@ -8,12 +8,18 @@ class SegurancaService {
                 {
                     model: database.roles,
                     as: 'usuario_roles',
-                    attributes: ['id', 'nome', 'descricao']
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
                 },
                 {
                     model: database.permissoes,
                     as: 'usuario_permissoes',
-                    attributes: ['id', 'nome', 'descricao']
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
                 }
             ],
             where: {
@@ -52,12 +58,18 @@ class SegurancaService {
                 {
                     model: database.roles,
                     as:'usuario_roles',
-                    attributes: ['id', 'nome', 'descricao']
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
                 }, 
                 {
                     model: database.permissoes,
                     as: 'usuario_permissoes',
-                    attributes: ['id', 'nome', 'descricao']
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
                 }
             ]
         })
@@ -71,9 +83,15 @@ class SegurancaService {
                 {
                     model: database.permissoes,
                     as: 'roles_das_permissoes',
-                    attributes: ['id', 'nome', 'descricao']
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
                 }
-            ]
+            ],
+            where: {
+                id: dto.roleId
+            }
         })
 
         if (!role) {
@@ -97,7 +115,10 @@ class SegurancaService {
                 {
                     model: database.permissoes,
                     as: 'roles_das_permissoes',
-                    attributes: ['id', 'nome', 'descricao']
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
                 }
             ],
             where: {

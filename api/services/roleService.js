@@ -27,13 +27,34 @@ class RoleService {
     }
 
     async buscarTodasRoles() {
-        const roles = await database.roles.findAll()
+        const roles = await database.roles.findAll({
+            include: [
+                {
+                    model: database.permissoes,
+                    as: 'roles_das_permissoes',
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
+                }
+            ]
+        })
 
         return roles
     }
 
     async buscarRolePorId(id) {
         const role = await database.roles.findOne({
+            include: [
+                {
+                    model: database.permissoes,
+                    as: 'roles_das_permissoes',
+                    attributes: ['id', 'nome', 'descricao'],
+                    through: {
+                        attributes: [],
+                    }
+                }
+            ],
             where: {
                 id: id
             }

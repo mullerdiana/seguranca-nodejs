@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "postgres",
-    "password": "123456",
-    "database": "seguranca_nodejs_development",
+    "password": "qwerty",
+    "database": "store",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "123456",
-    "database": "seguranca_nodejs_test",
+    "password": "qwerty",
+    "database": "store_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "123456",
-    "database": "seguranca_nodejs_production",
+    "password": "qwerty",
+    "database": "store_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

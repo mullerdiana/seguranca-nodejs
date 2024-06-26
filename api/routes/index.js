@@ -2,7 +2,12 @@ const bodyParser = require("body-parser");
 
 const produto = require("./produtoRoute");
 const usuario = require("./usuariosRoute");
+const auth = require("./authRoute");
+const role = require("./role");
+const permissao = require("./permissao");
+const seguranca = require("./seguranca");
 
 module.exports = (app) => {
-  app.use(bodyParser.json(), produto, usuario);
+  app.use(bodyParser.json(), auth, produto, usuario, role, permissao,
+  seguranca);
 };

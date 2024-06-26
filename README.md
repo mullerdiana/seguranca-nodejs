@@ -7,8 +7,13 @@ npm run start
 ## criação de tabela com cli do sequelize
 sequelize model:create --name usuarios --attributes nome:string,email:string,senha:string
 
+sequelize db:migrate 
+
 ## instalação do bcryptjs
 npm i bcryptjs
+
+## instalação do jsonwebtoken
+npm i jsonwebtoken
 
 ## Crie um arquivo sequelize-cli no seu projeto, se ainda não existir
 ter o postgreSQL instalado na máquina
